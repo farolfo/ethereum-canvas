@@ -1,0 +1,1 @@
+MillionDollarHomepage.deployed().then(function(c) { c.getPixel(0,0).then(console.log); });
