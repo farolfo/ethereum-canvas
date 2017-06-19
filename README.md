@@ -5,7 +5,7 @@ The goal of this project is to develop a version of the million dollar home page
 
 ### Smart Contract API
 
-* `checkPixel(uint x, uint y) returns (address owner, uint price, string color)` Retruns the actual state of the pixel at the (x,y) coordinates. These goes from 0 to 999 each, showing a 1000*1000 pixeles window.
+* `checkPixel(uint x, uint y) returns (address owner, uint price, string color)` Retruns the actual state of the pixel at the (x,y) coordinates. These go from 0 to 999 each, showing a 1000*1000 pixeles window.
 
 * `buyPixel(uint x, uint y, uint price, string color) returns (bool)` Performs the buying of the pixel if the price is greater than the currently paied. Returns true if the operation had success, false if not.
 
