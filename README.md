@@ -9,21 +9,21 @@ The goal of this project is to develop a version of the million dollar home page
 
 * `buyPixel(uint x, uint y, uint price, string color) returns (bool)` Performs the buying of the pixel if the price is greater than the currently paied. Returns true if the operation had success, false if not.
 
-###Compile
+### Compile
 
 ```bash 
 $ truffle compile
 ```
 
-###Test
+### Test
 
-###Deploy
+### Deploy
 
 ```bash
 $ truffle migrate --reset
 ```
 
-###Run
+### Run
 
 Here we will test our Smart Contract API in the `truffle console`. We will first check the pixel at (0,0) and then buy it for 1 eth and place the color "0xfafafa". After that we will check its changed value and perform another buy on that pixel, changing the color.
 
