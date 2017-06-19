@@ -29,15 +29,12 @@ Here we will test our Smart Contract API in the `truffle console`. We will first
 
 ```
 truffle(development)> MillionDollarHomepage.deployed().then(function(c) { c.checkPixel(0,0).then(console.log); });
-undefined
-truffle(development)> [ '0x0000000000000000000000000000000000000000',
+[ '0x0000000000000000000000000000000000000000',
   { [String: '0'] s: 1, e: 0, c: [ 0 ] },
   '' ]
-
-undefined
+  
 truffle(development)> MillionDollarHomepage.deployed().then(function(c) { c.buyPixel(0,0,1,"0xfafafa").then(console.log); });
-undefined
-truffle(development)> { tx: '0x689ef29b1fc3e746a90f0dc4ea67d7c326c84d557c2a33fc9a0891c15c9d8849',
+{ tx: '0x689ef29b1fc3e746a90f0dc4ea67d7c326c84d557c2a33fc9a0891c15c9d8849',
   receipt: 
    { transactionHash: '0x689ef29b1fc3e746a90f0dc4ea67d7c326c84d557c2a33fc9a0891c15c9d8849',
      transactionIndex: 0,
@@ -48,18 +45,14 @@ truffle(development)> { tx: '0x689ef29b1fc3e746a90f0dc4ea67d7c326c84d557c2a33fc9
      contractAddress: null,
      logs: [] },
   logs: [] }
-truffle(development)> 
-undefined
+  
 truffle(development)> MillionDollarHomepage.deployed().then(function(c) { c.checkPixel(0,0).then(console.log); });
-undefined
-truffle(development)> [ '0x059f2d6add81e4b4aedc2e6465fc943b20e25100',
+[ '0x059f2d6add81e4b4aedc2e6465fc943b20e25100',
   { [String: '1'] s: 1, e: 0, c: [ 1 ] },
   '0xfafafa' ]
-
-undefined
+  
 truffle(development)> MillionDollarHomepage.deployed().then(function(c) { c.buyPixel(0,0,4,"0xdebede").then(console.log); });
-undefined
-truffle(development)> { tx: '0xae6387fcc5f9597e7f66b643845b12696da15803ba147031dac56cad0ffdd11b',
+{ tx: '0xae6387fcc5f9597e7f66b643845b12696da15803ba147031dac56cad0ffdd11b',
   receipt: 
    { transactionHash: '0xae6387fcc5f9597e7f66b643845b12696da15803ba147031dac56cad0ffdd11b',
      transactionIndex: 0,
@@ -70,13 +63,9 @@ truffle(development)> { tx: '0xae6387fcc5f9597e7f66b643845b12696da15803ba147031d
      contractAddress: null,
      logs: [] },
   logs: [] }
-
-undefined
+  
 truffle(development)> MillionDollarHomepage.deployed().then(function(c) { c.checkPixel(0,0).then(console.log); });
-undefined
-truffle(development)> [ '0x059f2d6add81e4b4aedc2e6465fc943b20e25100',
+[ '0x059f2d6add81e4b4aedc2e6465fc943b20e25100',
   { [String: '4'] s: 1, e: 0, c: [ 4 ] },
   '0xdebede' ]
-
-undefined
 ```
