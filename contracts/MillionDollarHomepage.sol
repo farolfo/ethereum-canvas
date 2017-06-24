@@ -28,6 +28,11 @@ contract MillionDollarHomepage {
 
 	function checkPixel(uint x, uint y) public constant returns(address, uint, string) {
 		var pixel = window[x][y];
+
+		if (window[x][y].price == 0) {
+		    pixel.color = "BLACK";
+		}
+
 		return (pixel.owner, pixel.price, pixel.color);
 	}
 }
