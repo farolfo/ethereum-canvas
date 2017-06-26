@@ -4,7 +4,7 @@ contract MillionDollarHomepage {
 
 	struct Pixel {
 		address owner;	// owner of pixel
-		uint price;		// price paied for the pixel
+		uint price;		// price payed for the pixel
 		string color; 	// color in HEX
 	}
 
@@ -16,23 +16,16 @@ contract MillionDollarHomepage {
 
 	uint maxHeight = 1000;
 
-	// tbd: IS THIS THREAD SAFE?? 
-	function buyPixel(uint x, uint y, uint price, string color) returns (bool) {
-		if (price > window[x][y].price) {
-			window[x][y] = Pixel({owner: msg.sender, price: price, color: color});
-			return true;
+	function buyPixel(uint x, uint y, string color) payable {
+		if (msg.value <= window[x][y].price) {
+			revert();
 		}
 
-		return false;
+        window[x][y] = Pixel({owner: msg.sender, price: msg.value, color: color});
 	}
 
 	function checkPixel(uint x, uint y) public constant returns(address, uint, string) {
 		var pixel = window[x][y];
-
-		if (window[x][y].price == 0) {
-		    pixel.color = "BLACK";
-		}
-
 		return (pixel.owner, pixel.price, pixel.color);
 	}
 }
