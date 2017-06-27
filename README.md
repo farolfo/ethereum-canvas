@@ -7,7 +7,7 @@ The goal of this project is to develop a version of the million dollar home page
 
 * `checkPixel(uint x, uint y) returns (address owner, uint price, string color)` Retruns the actual state of the pixel at the (x,y) coordinates. These go from 0 to 999 each, showing a 1000*1000 pixeles window.
 
-* `buyPixel(uint x, uint y, string color) returns (bool)` Performs the buying of the pixel if the price send in the value of the message is greater than the currently paied one. If the opperation fails or the funds are not enough, the contract makes a `revert()` call cancelling the transaction.
+* `buyPixel(uint x, uint y, string color) payable` Performs the buying of the pixel if the price send in the value of the message is greater than the currently paied one. If the opperation fails or the funds are not enough, the contract makes a `revert()` call cancelling the transaction.
 
 ### Compile
 
