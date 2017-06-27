@@ -17,6 +17,10 @@ $ truffle compile
 
 ### Test
 
+```bash
+$ truffle test
+```
+
 ### Deploy
 
 ```bash
