@@ -1,13 +1,13 @@
 Ethereum Million Dollar Homepage
 =====================
 
-The goal of this project is to develop a version of the million dollar home page (http://www.milliondollarhomepage.com/) using a Smart Contract as backend service, developed with Solidity (https://solidity.readthedocs.io/en/develop/#) and OpenZeppelin (https://openzeppelin.org). This backend will be consumed by a web UI with an RPC API.
+The goal of this project is to develop a version of the million dollar home page (http://www.milliondollarhomepage.com/) using a Smart Contract as backend service, developed with Solidity (https://solidity.readthedocs.io/en/develop/#). This backend will be consumed by a web UI with an RPC API.
 
 ### Smart Contract API
 
 * `checkPixel(uint x, uint y) returns (address owner, uint price, string color)` Retruns the actual state of the pixel at the (x,y) coordinates. These go from 0 to 999 each, showing a 1000*1000 pixeles window.
 
-* `buyPixel(uint x, uint y, uint price, string color) returns (bool)` Performs the buying of the pixel if the price is greater than the currently paied. Returns true if the operation had success, false if not.
+* `buyPixel(uint x, uint y, string color) payable` Performs the buying of the pixel if the price send in the value of the message is greater than the currently paied one. If the opperation fails or the funds are not enough, the contract makes a `revert()` call cancelling the transaction.
 
 ### Compile
 
@@ -16,6 +16,10 @@ $ truffle compile
 ```
 
 ### Test
+
+```bash
+$ truffle test
+```
 
 ### Deploy
 
@@ -33,7 +37,7 @@ truffle(development)> MillionDollarHomepage.deployed().then(function(c) { c.chec
   { [String: '0'] s: 1, e: 0, c: [ 0 ] },
   '' ]
   
-truffle(development)> MillionDollarHomepage.deployed().then(function(c) { c.buyPixel(0,0,1,"0xfafafa").then(console.log); });
+truffle(development)> MillionDollarHomepage.deployed().then(function(c) { c.buyPixel(0,0,"0xfafafa").then(console.log); });
 { tx: '0x689ef29b1fc3e746a90f0dc4ea67d7c326c84d557c2a33fc9a0891c15c9d8849',
   receipt: 
    { transactionHash: '0x689ef29b1fc3e746a90f0dc4ea67d7c326c84d557c2a33fc9a0891c15c9d8849',
@@ -51,7 +55,7 @@ truffle(development)> MillionDollarHomepage.deployed().then(function(c) { c.chec
   { [String: '1'] s: 1, e: 0, c: [ 1 ] },
   '0xfafafa' ]
   
-truffle(development)> MillionDollarHomepage.deployed().then(function(c) { c.buyPixel(0,0,4,"0xdebede").then(console.log); });
+truffle(development)> MillionDollarHomepage.deployed().then(function(c) { c.buyPixel(0,0,"0xdebede").then(console.log); });
 { tx: '0xae6387fcc5f9597e7f66b643845b12696da15803ba147031dac56cad0ffdd11b',
   receipt: 
    { transactionHash: '0xae6387fcc5f9597e7f66b643845b12696da15803ba147031dac56cad0ffdd11b',
