@@ -17,7 +17,7 @@ contract MillionDollarHomepage {
 	uint maxHeight = 1000;
 
 	function buyPixel(uint x, uint y, string color) payable {
-		if (msg.value <= window[x][y].price) {
+	    if (msg.value <= window[x][y].price) {
 			revert();
 		}
 
