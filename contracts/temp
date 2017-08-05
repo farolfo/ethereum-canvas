@@ -19,7 +19,6 @@
                     resp = strConcat(resp, addressToString(window[x][y].owner));
                     resp = strConcat(resp, "\"},");
                 }
-
             }
         }
 

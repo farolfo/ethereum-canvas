@@ -1,9 +1,18 @@
-pragma solidity ^0.4.4;
+pragma solidity ^0.4.13;
 
 /**
  * Contract of the Ethereum's Millon Dollar Homepage.
  */
 contract MillionDollarHomepage {
+
+    /**
+     * Event of a pixel purchase.
+     */
+    event Purchase (
+        address owner,	// owner of pixel
+        uint price, 	// price payed for the pixel
+        string color 	// color in HEX or any string acceptable by CSS3 as a colour
+    );
 
     /**
      * A pixel of the window.
@@ -38,6 +47,7 @@ contract MillionDollarHomepage {
 		}
 
         window[x][y] = Pixel({owner: msg.sender, price: msg.value, color: color});
+        Purchase(msg.sender, msg.value, color);
 	}
 
     /**
