@@ -35,28 +35,31 @@ contract('MillionDollarHomepage', function(accounts) {
 
   it("should trigger a Purchase event with the proper price set when a pixel is bought", async function() {
     await millionDollarHomepage.buyPixel(0, 0, "#FAFAFA", {from: accounts[0], value: 1});
-    await millionDollarHomepage.Purchase(function(error, result) {
+    let events = await millionDollarHomepage.Purchase(function(error, result) {
       if (!error) {
         assert.equal(result.args.price, 1, "The price is not correct");
       }
+      events.stopWatching();
     });
   });
 
   it("should trigger a Purchase event with the proper owner set when a pixel is bought", async function() {
     await millionDollarHomepage.buyPixel(0, 0, "#FAFAFA", {from: accounts[0], value: 1});
-    await millionDollarHomepage.Purchase(function(error, result) {
+    let events = await millionDollarHomepage.Purchase(function(error, result) {
       if (!error) {
         assert.equal(result.args.owner, accounts[0], "The owner is not correct");
       }
+      events.stopWatching();
     });
   });
 
   it("should trigger a Purchase event with the proper color set when a pixel is bought", async function() {
     await millionDollarHomepage.buyPixel(0, 0, "#FAFAFA", {from: accounts[0], value: 1});
-    await millionDollarHomepage.Purchase(function(error, result) {
+    let events = await millionDollarHomepage.Purchase(function(error, result) {
       if (!error) {
         assert.equal(result.args.color, "#FAFAFA", "The color is not correct");
       }
+      events.stopWatching();
     });
   });
 
