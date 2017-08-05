@@ -141,4 +141,22 @@ contract('MillionDollarHomepage', function(accounts) {
     let pixel = await millionDollarHomepage.checkPixel(2,0);
     assert.equal(pixel[0], accounts[0], "The owner is not correct");
   });
+
+  it("should fail if buying an out of pound pixel", async function() {
+    try {
+      await millionDollarHomepage.buyPixel(-1, 0, "#JAJAJA", {from: accounts[1], value: 3});
+      assert.fail('should have thrown before');
+    } catch (err) {
+      assertJump(err);
+    }
+  });
+
+  it("should fail if checking an out of pound pixel", async function() {
+    try {
+      await millionDollarHomepage.checkPixel(-1, 0);
+      assert.fail('should have thrown before');
+    } catch (err) {
+      assertJump(err);
+    }
+  });
 });
