@@ -1,4 +1,4 @@
-Ethereum Million Dollar Homepage
+Ethereum Million Dollar Homepage [![Build Status](https://travis-ci.org/farolfo/eth-million-dollar-homepage.png)](https://travis-ci.org/farolfo/eth-million-dollar-homepage)
 =====================
 
 The goal of this project is to develop a version of the million dollar home page (http://www.milliondollarhomepage.com/) using a Smart Contract as backend service, developed with Solidity (https://solidity.readthedocs.io/en/develop/#). This backend will be consumed by a web UI with an RPC API.
