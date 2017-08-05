@@ -33,6 +33,33 @@ contract('MillionDollarHomepage', function(accounts) {
     assert.equal(pixel[1], 1, "The price is not defined");
   });
 
+  it("should trigger a Purchase event with the proper price set when a pixel is bought", async function() {
+    await millionDollarHomepage.buyPixel(0, 0, "#FAFAFA", {from: accounts[0], value: 1});
+    await millionDollarHomepage.Purchase(function(error, result) {
+      if (!error) {
+        assert.equal(result.args.price, 1, "The price is not correct");
+      }
+    });
+  });
+
+  it("should trigger a Purchase event with the proper owner set when a pixel is bought", async function() {
+    await millionDollarHomepage.buyPixel(0, 0, "#FAFAFA", {from: accounts[0], value: 1});
+    await millionDollarHomepage.Purchase(function(error, result) {
+      if (!error) {
+        assert.equal(result.args.owner, accounts[0], "The owner is not correct");
+      }
+    });
+  });
+
+  it("should trigger a Purchase event with the proper color set when a pixel is bought", async function() {
+    await millionDollarHomepage.buyPixel(0, 0, "#FAFAFA", {from: accounts[0], value: 1});
+    await millionDollarHomepage.Purchase(function(error, result) {
+      if (!error) {
+        assert.equal(result.args.color, "#FAFAFA", "The color is not correct");
+      }
+    });
+  });
+
   it("should set the proper color to a new pixel when is bought", async function() {
     await millionDollarHomepage.buyPixel(0, 0, "#FAFAFA", {from: accounts[0], value: 1});
     let pixel = await millionDollarHomepage.checkPixel(0,0);
