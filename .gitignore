@@ -9,3 +9,4 @@ build/
 coverage.json
 allFiredEvents
 scTopics
+build/
