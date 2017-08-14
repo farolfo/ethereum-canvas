@@ -4,7 +4,7 @@
   "description": "Ethereum's Millon Dollar Homepage project.",
   "main": "truffle.js",
   "scripts": {
-    "compile": "node_modules/.bin/truffle --truffle compile",
+    "compile": "node_modules/.bin/truffle compile",
     "deploy": "scripts/deploy.sh",
     "test": "scripts/test.sh"
   },

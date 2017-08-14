@@ -11,7 +11,9 @@ contract MillionDollarHomepage {
     event Purchase (
         address owner,	// owner of pixel
         uint price, 	// price payed for the pixel
-        string color 	// color in HEX or any string acceptable by CSS3 as a colour
+        string color, 	// color in HEX or any string acceptable by CSS3 as a colour
+        uint x,         // the x coordinate
+        uint y          // the y coordinate
     );
 
     /**
@@ -47,7 +49,7 @@ contract MillionDollarHomepage {
 		}
 
         window[x][y] = Pixel({owner: msg.sender, price: msg.value, color: color});
-        Purchase(msg.sender, msg.value, color);
+        Purchase(msg.sender, msg.value, color, x, y);
 	}
 
     /**

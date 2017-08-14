@@ -15,9 +15,9 @@ testrpc_running() {
 }
 
 if testrpc_running; then
-  printf "Using existing testrpc instance"
+  printf "Using existing testrpc instance\n"
 else
-  printf "Starting our own testrpc instance"
+  printf "Starting our own testrpc instance\n"
   # We define 10 accounts with balance 1M ether, needed for high-value tests.
   testrpc \
     --account="0x2bdd21761a483f71054e14f5b827213567971c676928d9a1808cbfa4b7501200,1000000000000000000000000"  \

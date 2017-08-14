@@ -43,6 +43,17 @@ contract('MillionDollarHomepage', function(accounts) {
     });
   });
 
+  it("should trigger a Purchase event with the proper coordinates set when a pixel is bought", async function() {
+    await millionDollarHomepage.buyPixel(3, 45, "#FAFAFA", {from: accounts[0], value: 1});
+    let events = await millionDollarHomepage.Purchase(function(error, result) {
+      if (!error) {
+        assert.equal(result.args.x, 3, "The x coordinate is not correct");
+        assert.equal(result.args.y, 45, "The y coordinate is not correct");
+      }
+      events.stopWatching();
+    });
+  });
+
   it("should trigger a Purchase event with the proper owner set when a pixel is bought", async function() {
     await millionDollarHomepage.buyPixel(0, 0, "#FAFAFA", {from: accounts[0], value: 1});
     let events = await millionDollarHomepage.Purchase(function(error, result) {

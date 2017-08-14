@@ -13,6 +13,15 @@ The goal of this project is to develop the million dollar home page (http://www.
 
 You must have a node version ^6.11.0. We highly recommend `nvm` to manage node versions on your machine.
 
+Make sure you have solidity and testrpc installed in your machine
+
+```
+npm install -g solc
+npm install -g ethereumjs-testrpc
+```
+
+And then install this project dependencies
+
 ```bash
 $ npm install
 ```
