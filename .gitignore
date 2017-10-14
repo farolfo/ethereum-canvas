@@ -10,3 +10,4 @@ coverage.json
 allFiredEvents
 scTopics
 build/
+npm-debug.log
