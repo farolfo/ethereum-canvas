@@ -1,7 +1,8 @@
-Ethereum Million Dollar Homepage [![Build Status](https://travis-ci.org/farolfo/eth-million-dollar-homepage.png)](https://travis-ci.org/farolfo/eth-million-dollar-homepage)
+Ethereum Canvas [![Build Status](https://travis-ci.org/farolfo/ethereum-canvas.png)](https://travis-ci.org/farolfo/ethereum-canvas)
 =====================
 
-The goal of this project is to develop the million dollar home page (http://www.milliondollarhomepage.com/) using a Smart Contract as core backend service, developed with Solidity (https://solidity.readthedocs.io/en/develop/#). This backend will be consumed by a web UI via an RPC API and Solidity events.
+The goal of this project is to develop a canvas of pixels such that any user can buy and paint them using EHT, similar to the [MillionDollarHomePage.com](http://milliondollarhomepage.com/) project but in this case the pixels can be bought by other users if they pay more for it.
+It makes usage of a Smart Contract as core backend service, developed with [Solidity](https://solidity.readthedocs.io/en/develop/#). This backend will be consumed by a web UI via an RPC API with the Chrome extension [MetaMask](https://metamask.io/).
 
 ### Smart Contract API
 
@@ -11,7 +12,7 @@ The goal of this project is to develop the million dollar home page (http://www.
 
 ### Install
 
-You must have a node version ^6.11.0. We highly recommend `nvm` to manage node versions on your machine.
+You must have a node version `^6.11.0`. We highly recommend `nvm` to manage node versions on your machine.
 
 Make sure you have solidity and testrpc installed in your machine
 

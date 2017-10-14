@@ -1,12 +1,12 @@
 pragma solidity ^0.4.13;
 
 /**
- * Contract of the Ethereum's Millon Dollar Homepage.
+ * Contract of the Ethereum Canvas.
  */
-contract MillionDollarHomepage {
+contract EthereumCanvas {
 
     /**
-     * Event of a pixel purchase.
+     * Event of a pixel's purchase.
      */
     event Purchase (
         address owner,	// owner of pixel

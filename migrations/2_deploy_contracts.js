@@ -1,5 +1,5 @@
-var MillionDollarHomepage = artifacts.require("./MillionDollarHomepage.sol");
+var EthereumCanvas = artifacts.require("./EthereumCanvas.sol");
 
 module.exports = function(deployer) {
-  deployer.deploy(MillionDollarHomepage);
+  deployer.deploy(EthereumCanvas);
 };
