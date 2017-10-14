@@ -21,8 +21,8 @@ contract EthereumCanvas {
      */
     struct Pixel {
         address owner;  // owner of pixel
-		uint price;     // price payed for the pixel
-		string color;   // color in HEX or any string acceptable by CSS3 as a colour
+        uint price;     // price payed for the pixel
+        string color;   // color in HEX or any string acceptable by CSS3 as a colour
     }
 
     /**
@@ -64,9 +64,9 @@ contract EthereumCanvas {
         return (pixel.owner, pixel.price, pixel.color);
     }
 
-	/**
-	 * Function that checks whether the parameters are out of bound respect to the current window.
-	 */
+    /**
+     * Function that checks whether the parameters are out of bound respect to the current window.
+     */
     function isOutOfBound(uint x, uint y) public constant returns(bool) {
         return x < 0 || y < 0 || x >= maxWidth || y >= maxHeight;
     }
