@@ -12,7 +12,7 @@ It makes usage of a Smart Contract as core backend service, developed with [Soli
 
 ### Install
 
-You must have a node version `^6.11.0`. We highly recommend `nvm` to manage node versions on your machine.
+You must have a node version `^6.11.0`. We highly recommend [`nvm`](https://github.com/creationix/nvm) to manage node versions on your machine.
 
 Make sure you have solidity and testrpc installed in your machine
 
