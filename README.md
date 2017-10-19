@@ -1,7 +1,7 @@
 Ethereum Canvas [![Build Status](https://travis-ci.org/farolfo/ethereum-canvas.png)](https://travis-ci.org/farolfo/ethereum-canvas)
 =====================
 
-The goal of this project is to develop a canvas of pixels such that any user can buy and paint them using EHT, similar to the [MillionDollarHomePage.com](http://milliondollarhomepage.com/) project but in this case the pixels can be bought by other users if they pay more for it.
+The goal of this project is to develop a canvas of pixels such that any user can buy and paint them using ETH, similar to the [MillionDollarHomePage.com](http://milliondollarhomepage.com/) project but in this case the pixels can be bought by other users if they pay more for it.
 It makes usage of a Smart Contract as core backend service, developed with [Solidity](https://solidity.readthedocs.io/en/develop/#). This backend will be consumed by a web UI via an RPC API with the Chrome extension [MetaMask](https://metamask.io/).
 
 ### Smart Contract API
